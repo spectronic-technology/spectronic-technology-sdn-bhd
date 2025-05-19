@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Spectronic Technology Sdn Bhd</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            background: rgba(0, 43, 92, 0.95);
+            color: white;
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .company-name {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-hero {
+            background: linear-gradient(135deg, rgba(0, 43, 92, 0.97), rgba(0, 83, 168, 0.95));
+            padding: 150px 5% 80px;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            padding: 30px;
+        }
+
+        .contact-info h2 {
+            color: #002B5C;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: #002B5C;
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .info-details h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .info-details p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .contact-form h2 {
+            color: #002B5C;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #002B5C;
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            background: #002B5C;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #003d7a;
+        }
+
+        .map-section {
+            width: 100%;
+            height: 400px;
+            margin-top: 60px;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        footer {
+            background: #002B5C;
+            color: white;
+            text-align: center;
+            padding: 1.2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 968px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-form,
+            .contact-info {
+                padding: 20px;
+            }
+        }
+        /* Update the contact-hero section */
+.contact-hero {
+    background: linear-gradient(135deg, rgba(0, 43, 92, 0.9), rgba(0, 83, 168, 0.9)),
+                url('images/tech-circuit.jpg') center/cover fixed;
+    padding: 150px 5% 80px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 8%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 8%);
+    animation: shimmer 4s ease-in-out infinite;
+}
+
+.contact-hero h1 {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.contact-hero p {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease 0.2s;
+}
+
+.contact-content {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+}
+
+.contact-content::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('images/dots-pattern.png') repeat;
+    opacity: 0.05;
+    animation: slide 20s linear infinite;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-form:hover {
+    transform: translateY(-5px);
+}
+
+button {
+    background: linear-gradient(45deg, #002B5C, #0056b3);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    animation: buttonShine 3s infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+@keyframes buttonShine {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+.info-item i {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="company-name">Spectronic Technology Sdn Bhd</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team</p>
+        </section>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-details">
+                        <h3>Our Location</h3>
+                        <p>7, Jln Kempas Lama 2/7, Kawasan Perindustrian Tiong Nam Kempas 2, 81200 Johor Bahru, Johor Darul Ta'zim</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="info-details">
+                        <h3>Phone</h3>
+                        <p>019-755 7592</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-details">
+                        <h3>Email</h3>
+                        <p>admin@spectronic.com.my</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="info-details">
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday & Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="map-section">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4762921152396!2d103.71279571475072!3d1.4981899989334567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da6d7c2a9d5555%3A0x1c1c0b67d0e9b0a0!2sKawasan%20Perindustrian%20Tiong%20Nam%20Kempas%202!5e0!3m2!1sen!2smy!4v1625647893012!5m2!1sen!2smy" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Spectronic Technology Sdn Bhd | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
