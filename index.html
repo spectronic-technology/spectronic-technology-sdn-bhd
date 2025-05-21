@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="[Copy verification code from Google Search Console]" />
     <title>Spectronic Technology Sdn Bhd</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -40,10 +41,47 @@
             letter-spacing: 0.5px;
         }
 
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
         .nav-links {
             display: flex;
             gap: 3rem;
+            align-items: center;
         }
+
+        .datetime {
+        color: white;
+        font-size: 0.9rem;
+        margin-left: 2rem;
+        text-align: right;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px 15px;
+        border-radius: 8px;
+        backdrop-filter: blur(5px);
+    }
+
+    .datetime .time {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .datetime .date {
+        font-size: 0.8rem;
+        opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+        .datetime {
+            display: none;
+        }
+    }
 
         .nav-links a {
             color: white;
@@ -187,9 +225,8 @@
             }
         }
         .hero {
-    height: 100vh;
-    background: linear-gradient(135deg, rgba(0, 43, 92, 0.85), rgba(0, 83, 168, 0.85)),
-                url('images/circuit-bg.jpg') center/cover fixed;
+    background: linear-gradient(135deg, rgba(0, 43, 92, 0.9), rgba(0, 83, 168, 0.9)),
+                url('./images/tech-bg.jpg') center/cover fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,7 +241,7 @@
     position: absolute;
     width: 150%;
     height: 150%;
-    background: url('images/circuit-pattern.png') repeat;
+    background: url('./images/circuit-pattern.png') repeat;
     opacity: 0.1;
     animation: backgroundMove 30s linear infinite;
 }
@@ -385,6 +422,7 @@
                 <a href="about.html">About Us</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact Us</a>
+                <div class="datetime" id="datetime"></div>
             </div>
         </nav>
     </header>
@@ -392,7 +430,7 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <img src="spectronic.jpg" alt="Spectronic Technology Logo" class="hero-logo">
+                <img src="./images/spectronic.jpg" alt="Spectronic Technology Logo" class="hero-logo">
                 <h1>Your Partner in Excellence</h1>
                 <p>Leading provider of precision engineering solutions for electronics manufacturing</p>
                 <a href="services.html" class="cta-button">Explore Our Services</a>
@@ -423,5 +461,23 @@
     <footer>
         <p>&copy; 2025 Spectronic Technology Sdn Bhd | All Rights Reserved</p>
     </footer>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            
+            const dateStr = now.toLocaleDateString('en-US', dateOptions);
+            const timeStr = now.toLocaleTimeString('en-US', timeOptions);
+            
+            document.getElementById('datetime').innerHTML = `
+                <div class="time">${timeStr}</div>
+                <div class="date">${dateStr}</div>
+            `;
+        }
+    
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 </html>
