@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="[Copy verification code from Google Search Console]" />
     <title>Contact Us - Spectronic Technology Sdn Bhd</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -325,6 +326,42 @@ button::before {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
 }
+.form-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    display: none;
+}
+    </style>
+     <style>
+        .whatsapp-chat {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn i {
+            font-size: 32px;
+        }
     </style>
 </head>
 <body>
@@ -336,6 +373,7 @@ button::before {
                 <a href="about.html">About Us</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact Us</a>
+                <div class="datetime" id="datetime"></div>
             </div>
         </nav>
     </header>
@@ -367,7 +405,7 @@ button::before {
                     <i class="fas fa-envelope"></i>
                     <div class="info-details">
                         <h3>Email</h3>
-                        <p>admin@spectronic.com.my</p>
+                        <p>syamimi2908@gmail.com</p>
                     </div>
                 </div>
                 <div class="info-item">
@@ -381,7 +419,7 @@ button::before {
 
             <div class="contact-form">
                 <h2>Send Us a Message</h2>
-                <form action="#" method="POST">
+                <form id="contactForm" onsubmit="return submitForm(event)">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -400,6 +438,7 @@ button::before {
                     </div>
                     <button type="submit">Send Message</button>
                 </form>
+                <div id="formMessage" class="form-message"></div>
             </div>
         </div>
 
@@ -411,5 +450,61 @@ button::before {
     <footer>
         <p>&copy; 2025 Spectronic Technology Sdn Bhd | All Rights Reserved</p>
     </footer>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            const form = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+            const formData = new FormData(form);
+        
+            formMessage.innerHTML = '<p style="color: #666;">Sending message...</p>';
+            formMessage.style.display = 'block';
+        
+            fetch('send-mail.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    formMessage.innerHTML = '<p style="color: #28a745;">Message sent successfully! We\'ll get back to you soon.</p>';
+                    form.reset();
+                } else {
+                    formMessage.innerHTML = '<p style="color: #dc3545;">Failed to send message. Please try again.</p>';
+                }
+            })
+            .catch(error => {
+                formMessage.innerHTML = '<p style="color: #dc3545;">An error occurred. Please try again later.</p>';
+            });
+        
+            return false;
+        }
+       
+        function updateDateTime() {
+            const now = new Date();
+            const dateOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            
+            const dateStr = now.toLocaleDateString('en-US', dateOptions);
+            const timeStr = now.toLocaleTimeString('en-US', timeOptions);
+            
+            document.getElementById('datetime').innerHTML = `
+                <div class="time">${timeStr}</div>
+                <div class="date">${dateStr}</div>
+            `;
+        }
+
+        // Ensure DOM is loaded before running
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+        });
+    
+        </script>
+         <div class="whatsapp-chat">
+            <a href="https://wa.me/60197557592" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
 </body>
 </html>
