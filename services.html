@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="[Copy verification code from Google Search Console]" />
     <title>Services - Spectronic Technology Sdn Bhd</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -397,6 +398,33 @@
             0%, 100% { opacity: 0.5; }
             50% { opacity: 1; }
         }
+        .datetime {
+        color: white;
+        font-size: 0.9rem;
+        margin-left: 2rem;
+        text-align: right;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px 15px;
+        border-radius: 8px;
+        backdrop-filter: blur(5px);
+    }
+
+    .datetime .time {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .datetime .date {
+        font-size: 0.8rem;
+        opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+        .datetime {
+            display: none;
+        }
+    }
     </style>
 </head>
 <body>
@@ -408,6 +436,7 @@
                 <a href="about.html">About Us</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact Us</a>
+                <div class="datetime" id="datetime"></div>
             </div>
         </nav>
     </header>
@@ -421,54 +450,54 @@
         <div class="services-content">
             <div class="services-intro">
                 <p>We offer a wide range of precision engineering solutions tailored to meet the diverse needs of the electronics manufacturing industry. Our services are designed to enhance your production efficiency and product quality.</p>
-            </div>
 
-                </div>
+            </div>
+            
                 <div class="services-grid">
                     <div class="service-card">
-                        <img src="images/smt.jpg" alt="SMT Manufacturing">
+                        <img src="./images/smt.jpg" alt="SMT Manufacturing">
                         <h3>SMT Manufacturing</h3>
                         <p>Advanced surface mount technology solutions for electronics assembly.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="images/cnc.jpg" alt="CNC Machining">
+                        <img src="./images/cnc.jpg" alt="CNC Machining">
                         <h3>CNC Machining</h3>
                         <p>Precision CNC machining services for complex components.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="images/jig.jpg" alt="Custom Jigs">
+                        <img src="./images/jig.jpg" alt="Custom Jigs">
                         <h3>Custom Jigs & Fixtures</h3>
                         <p>Specialized manufacturing jigs for precise assembly and testing.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="images/pcb.jpg" alt="PCB Assembly">
+                        <img src="./images/pcb.jpg" alt="PCB Assembly">
                         <h3>PCB Assembly</h3>
                         <p>Professional PCB assembly and manufacturing services.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="images/precision.jpg" alt="Precision Engineering">
+                        <img src="./images/precision.jpg" alt="Precision Engineering">
                         <h3>Precision Engineering</h3>
                         <p>High-precision engineering solutions for critical applications.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="images/inspection.jpg" alt="Quality Inspection">
+                        <img src="./images/inspection.jpg" alt="Quality Inspection">
                         <h3>Quality Inspection</h3>
                         <p>Comprehensive quality control and inspection services.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="images/cad.jpg" alt="CAD Design">
+                        <img src="./images/cad.jpg" alt="CAD Design">
                         <h3>CAD Design</h3>
                         <p>Professional CAD design and modeling services.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="images/manual.jpg" alt="Manual Assembly">
+                        <img src="./images/manual.jpg" alt="Manual Assembly">
                         <h3>Manual Assembly</h3>
                         <p>Skilled manual assembly services for specialized components.</p>
                     </div>
@@ -484,5 +513,26 @@
     <footer>
         <p>&copy; 2025 Spectronic Technology Sdn Bhd | All Rights Reserved</p>
     </footer>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            
+            const dateStr = now.toLocaleDateString('en-US', dateOptions);
+            const timeStr = now.toLocaleTimeString('en-US', timeOptions);
+            
+            document.getElementById('datetime').innerHTML = `
+                <div class="time">${timeStr}</div>
+                <div class="date">${dateStr}</div>
+            `;
+        }
+
+        // Ensure DOM is loaded before running
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+        });
+    </script>
 </body>
 </html>
