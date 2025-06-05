@@ -32,3 +32,6 @@ A professional website showcasing services and company presence in Malaysia and 
 2. Install dependencies:
 ```bash
 composer install
+
+![image description](images/malaysia.png)
+![image description](images/singapore.png)
