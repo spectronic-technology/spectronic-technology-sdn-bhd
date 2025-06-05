@@ -73,6 +73,35 @@
             gap: 3rem;
             align-items: center;
         }
+          .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        z-index: 1000;
+        border-radius: 10px;
+        padding: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
 
         .datetime {
         color: white;
@@ -452,6 +481,7 @@
     <header>
         <nav>
             <div class="company-name">Spectronic Technology Sdn Bhd</div>
+             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
@@ -514,5 +544,11 @@
         updateDateTime();
         setInterval(updateDateTime, 1000);
     </script>
+     <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
