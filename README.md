@@ -2,9 +2,18 @@
 
 A professional website showcasing services and company presence in Malaysia and Singapore.
 
-![Malaysia Office](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/malaysia.png) ![Singapore Office](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/singapore.png)
+## Our Services
+
+![CAD/CAM Services](images/cad.jpg) ![CNC Operations](images/cnc.jpg) ![Customer Service](images/customer.png) ![Quality Inspection](images/inspection.jpg)
+![Jig & Fixture](images/jig.jpg) ![PCB Assembly](images/pcb.jpg) ![Precision Engineering](images/precision.jpg) ![SMT Services](images/smt.jpg)
+![Spectronic Services](images/spectronic.jpg)
+
+## Our Locations
+
+![Malaysia Office](images/malaysia.png) ![Singapore Office](images/singapore.png)
 
 ## Project Structure
+
 
 
 
@@ -33,10 +42,7 @@ A professional website showcasing services and company presence in Malaysia and 
 - Company information and locations
 - Image gallery showcasing various services including:
 
-### Our Services
-![CAD/CAM](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/cad.jpg) ![CNC Operations](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/cnc.jpg)
-![PCB Assembly](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/pcb.jpg) ![SMT Services](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/smt.jpg)
-![Precision Engineering](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/precision.jpg) ![Quality Inspection](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/inspection.jpg)
+
 
 ## Technologies Used
 
