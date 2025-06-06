@@ -1,14 +1,14 @@
+# Web Project
+
+A professional website showcasing services and company presence in Malaysia and Singapore.
+
+![Malaysia Office](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/malaysia.png) ![Singapore Office](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/singapore.png)
+
+## Project Structure
 
 
 
-## Web Project
 
-A professional website showcasing services 
-and company presence in Malaysia and 
-Singapore.
-
-![Malaysia Office](images/malaysia.png) !
-[Singapore Office](images/singapore.png)
 
 ## Project Structure
 
@@ -24,6 +24,7 @@ Singapore.
 └── images/
 
 
+
 ## Features
 
 - Responsive web design
@@ -33,9 +34,9 @@ Singapore.
 - Image gallery showcasing various services including:
 
 ### Our Services
-![CAD/CAM](images/cad.jpg) ![CNC Operations](images/cnc.jpg)
-![PCB Assembly](images/pcb.jpg) ![SMT Services](images/smt.jpg)
-![Precision Engineering](images/precision.jpg) ![Quality Inspection](images/inspection.jpg)
+![CAD/CAM](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/cad.jpg) ![CNC Operations](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/cnc.jpg)
+![PCB Assembly](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/pcb.jpg) ![SMT Services](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/smt.jpg)
+![Precision Engineering](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/precision.jpg) ![Quality Inspection](https://raw.githubusercontent.com/spectronic-technology/spectronic-technology-sdn-bhd/main/images/inspection.jpg)
 
 ## Technologies Used
 
