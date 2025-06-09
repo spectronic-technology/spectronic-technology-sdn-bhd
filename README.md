@@ -12,6 +12,10 @@ A professional website showcasing services and company presence in Malaysia and 
 
 ![Malaysia Office](images/malaysia.png) ![Singapore Office](images/singapore.png)
 
+## Our Trusted Partner
+
+![Trusted Partner](images/customer.png)
+
 ## Project Structure
 
 
