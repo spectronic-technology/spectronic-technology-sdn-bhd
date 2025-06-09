@@ -2,6 +2,9 @@
 
 A professional website showcasing services and company presence in Malaysia and Singapore.
 
+## Our Logo
+![Spectronic Logo](images/spectronic.jpg)
+
 ## Our Services
 
 ![CAD/CAM Services](images/cad.jpg) ![CNC Operations](images/cnc.jpg) ![Customer Service](images/customer.png) ![Quality Inspection](images/inspection.jpg)
@@ -17,13 +20,6 @@ A professional website showcasing services and company presence in Malaysia and 
 ![Trusted Partner](images/customer.png)
 
 ## Project Structure
-
-
-
-
-
-
-## Project Structure
 
 ```
 ├── about.html
