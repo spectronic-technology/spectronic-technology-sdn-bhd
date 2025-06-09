@@ -46,35 +46,6 @@
             display: flex;
             gap: 3rem;
         }
-           .hamburger {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        z-index: 1000;
-        border-radius: 10px;
-        padding: 1rem;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
-    }
 
         .nav-links a {
             color: white;
@@ -231,24 +202,31 @@
     padding: 20px;
 }
 
+/* Remove duplicate service-card and img styles */
 .service-card {
-    overflow: hidden;
     background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: transform 0.3s ease;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    padding: 0; /* Updated */
 }
 
 .service-card img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease;
+    display: block; /* Added */
 }
+
+/* Add image container for better control */
+.service-image-container {
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
+
 
 .service-features {
     margin-top: 20px;
@@ -323,8 +301,97 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             padding: 40px;
-            max-width: 1400px;
-            margin: 0 auto;
+        }
+
+        .service-flip-card {
+            background-color: transparent;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .service-flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .flip-card-front {
+            background: white;
+            overflow: hidden;
+        }
+
+        .flip-card-front img {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .flip-card-front h3 {
+            padding: 20px;
+            color: #002B5C;
+            font-size: 1.5rem;
+        }
+
+        .flip-card-back {
+            background: linear-gradient(135deg, #002B5C, #0056b3);
+            color: white;
+            transform: rotateY(180deg);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 20px 0;
+            text-align: left;
+        }
+
+        .service-features li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features i {
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+
+        .service-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .service-btn:hover {
+            background: white;
+            color: #002B5C;
         }
 
         .service-card {
@@ -454,13 +521,13 @@
             display: none;
         }
     }
+    
     </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="company-name">Spectronic Technology Sdn Bhd</div>
-             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
@@ -485,49 +552,49 @@
             
                 <div class="services-grid">
                     <div class="service-card">
-                        <img src="./images/smt.jpg" alt="SMT Manufacturing">
+                        <img src="images/smt.jpg" alt="SMT Manufacturing">
                         <h3>SMT Manufacturing</h3>
                         <p>Advanced surface mount technology solutions for electronics assembly.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="./images/cnc.jpg" alt="CNC Machining">
+                        <img src="images/cnc.jpg" alt="CNC Machining">
                         <h3>CNC Machining</h3>
                         <p>Precision CNC machining services for complex components.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="./images/jig.jpg" alt="Custom Jigs">
+                        <img src="images/jig.jpg" alt="Custom Jigs">
                         <h3>Custom Jigs & Fixtures</h3>
                         <p>Specialized manufacturing jigs for precise assembly and testing.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="./images/pcb.jpg" alt="PCB Assembly">
+                        <img src="images/pcb.jpg" alt="PCB Assembly">
                         <h3>PCB Assembly</h3>
                         <p>Professional PCB assembly and manufacturing services.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="./images/precision.jpg" alt="Precision Engineering">
+                        <img src="images/precision.jpg" alt="Precision Engineering">
                         <h3>Precision Engineering</h3>
                         <p>High-precision engineering solutions for critical applications.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="./images/inspection.jpg" alt="Quality Inspection">
+                        <img src="images/inspection.jpg" alt="Quality Inspection">
                         <h3>Quality Inspection</h3>
                         <p>Comprehensive quality control and inspection services.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="./images/cad.jpg" alt="CAD Design">
+                        <img src="images/cad.jpg" alt="CAD Design">
                         <h3>CAD Design</h3>
                         <p>Professional CAD design and modeling services.</p>
                     </div>
                 
                     <div class="service-card">
-                        <img src="./images/manual.jpg" alt="Manual Assembly">
+                        <img src="images/manual.jpg" alt="Manual Assembly">
                         <h3>Manual Assembly</h3>
                         <p>Skilled manual assembly services for specialized components.</p>
                     </div>
@@ -564,11 +631,5 @@
             setInterval(updateDateTime, 1000);
         });
     </script>
-    <script>
-    function toggleMenu() {
-      const nav = document.querySelector('.nav-links');
-      nav.classList.toggle('show');
-    }
-  </script>
 </body>
 </html>
