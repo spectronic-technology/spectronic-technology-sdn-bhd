@@ -233,298 +233,88 @@
     padding: 20px;
 }
 
-/* Remove duplicate service-card and img styles */
-.service-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    position: relative;
-    padding: 0; /* Updated */
-}
-
-.service-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-    display: block; /* Added */
-}
-
-/* Add image container for better control */
-.service-image-container {
-    overflow: hidden;
-    border-radius: 20px 20px 0 0;
-}
-
-
-.service-features {
-    margin-top: 20px;
-    text-align: left;
-    padding: 10px 0;
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    margin: 12px 0;
-    color: #444;
-}
-
-.feature-item i {
-    font-size: 1rem;
-    color: #002B5C;
-    margin-right: 10px;
-}
-
-.feature-item span {
-    font-size: 0.95rem;
-}
+/* General Styles */
 .services-hero {
-            height: 50vh;
-            background: linear-gradient(135deg, rgba(0, 43, 92, 0.9), rgba(0, 83, 168, 0.9)),
-                        url('images/tech-bg.jpg') center/cover fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #e6f0ff, #f9fbff);
+  font-family: 'Poppins', sans-serif;
+}
 
-        .services-hero::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 8%);
-            animation: sparkle 4s ease-in-out infinite;
-        }
+.services-hero h1 {
+  font-size: 36px;
+  color: #003366;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-out;
+}
 
-        .services-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
+.services-hero .subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+  font-style: italic;
+}
 
-        .services-hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s;
-        }
+/* Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-        .services-content {
-            background: #f8f9fa;
-            position: relative;
-        }
+/* Service Card */
+.service-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 18px rgba(0, 51, 102, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
 
-        .services-intro {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-            animation: fadeIn 1s ease;
-        }
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 51, 102, 0.2);
+}
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 40px;
-        }
+.service-card .tick {
+  font-size: 36px;
+  color: #007bff;
+  margin-bottom: 10px;
+  animation: bounce 1s infinite alternate;
+}
 
-        .service-flip-card {
-            background-color: transparent;
-            height: 400px;
-            perspective: 1000px;
-        }
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #002244;
+}
 
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
+.service-card p {
+  font-size: 14px;
+  color: #444;
+}
 
-        .service-flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
 
-        .flip-card-front {
-            background: white;
-            overflow: hidden;
-        }
+/* Responsive tweak (optional) */
+@media (max-width: 480px) {
+  .services-hero h1 {
+    font-size: 28px;
+  }
+}
 
-        .flip-card-front img {
-            width: 100%;
-            height: 70%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .flip-card-front h3 {
-            padding: 20px;
-            color: #002B5C;
-            font-size: 1.5rem;
-        }
-
-        .flip-card-back {
-            background: linear-gradient(135deg, #002B5C, #0056b3);
-            color: white;
-            transform: rotateY(180deg);
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .service-features {
-            list-style: none;
-            padding: 20px 0;
-            text-align: left;
-        }
-
-        .service-features li {
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .service-features i {
-            margin-right: 10px;
-            color: #4CAF50;
-        }
-
-        .service-btn {
-            display: inline-block;
-            padding: 10px 25px;
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .service-btn:hover {
-            background: white;
-            color: #002B5C;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        .service-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .service-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .service-content {
-            padding: 25px;
-        }
-
-        .service-card h3 {
-            color: #002B5C;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .service-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, #002B5C, #0056b3);
-            transition: width 0.3s ease;
-        }
-
-        .service-card:hover h3::after {
-            width: 100px;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .feature-list {
-            padding: 0 25px 25px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin: 12px 0;
-            color: #444;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateX(10px);
-        }
-
-        .feature-item i {
-            color: #002B5C;
-            margin-right: 10px;
-            font-size: 1rem;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
         .datetime {
         color: white;
         font-size: 0.9rem;
@@ -571,72 +361,53 @@
     </header>
 
     <main>
-        <section class="services-hero">
-            <h1>Our Services</h1>
-            <p>Comprehensive Solutions for Electronics Manufacturing</p>
+       <section class="services-hero">
+  <h1>✨ Our Services</h1>
+  <p class="subtitle">Innovative Solutions for Electronics Manufacturing</p>
 
-             <div class="services-content">
-            <div class="services-intro">
-                <p>We offer a wide range of precision engineering solutions tailored to meet the diverse needs of the electronics manufacturing industry. Our services are designed to enhance your production efficiency and product quality.</p>
-
-            </div>
-            
-                <div class="services-grid">
-                    <div class="service-card">
-                        <img src="smt.jpg" alt="SMT Process">
-                        <h3>SMT Manufacturing</h3>
-                        <p>Advanced surface mount technology solutions for electronics assembly.</p>
-                    </div>
-                
-                    <div class="service-card">
-                        <img src="cnc.jpg" alt="CNC Machining">
-                        <h3>CNC Machining</h3>
-                        <p>Precision CNC machining services for complex components.</p>
-                    </div>
-                
-                    <div class="service-card">
-                        <img src="jig.jpg" alt="Custom Jigs">
-                        <h3>Custom Jigs & Fixtures</h3>
-                        <p>Specialized manufacturing jigs for precise assembly and testing.</p>
-                    </div>
-                
-                    <div class="service-card">
-                        <img src="pcb.jpg" alt="PCB Assembly">
-                        <h3>PCB Assembly</h3>
-                        <p>Professional PCB assembly and manufacturing services.</p>
-                    </div>
-                
-                    <div class="service-card">
-                        <img src="precision.jpg" alt="Precision Engineering">
-                        <h3>Precision Engineering</h3>
-                        <p>High-precision engineering solutions for critical applications.</p>
-                    </div>
-                
-                    <div class="service-card">
-                        <img src="inspection.jpg" alt="Quality Inspection">
-                        <h3>Quality Inspection</h3>
-                        <p>Comprehensive quality control and inspection services.</p>
-                    </div>
-                
-                    <div class="service-card">
-                        <img src="cad.jpg" alt="CAD Design">
-                        <h3>CAD Design</h3>
-                        <p>Professional CAD design and modeling services.</p>
-                    </div>
-                
-                    <div class="service-card">
-                        <img src="manual.jpg" alt="Manual Assembly">
-                        <h3>Manual Assembly</h3>
-                        <p>Skilled manual assembly services for specialized components.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-            
-        </section>
-
-       
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="tick">✅</div>
+      <h3>SMT Manufacturing</h3>
+      <p>Advanced surface mount technology for fast and precise electronic assembly.</p>
+    </div>
+    <div class="service-card">
+      <div class="tick">✅</div>
+      <h3>CNC Machining</h3>
+      <p>High-precision CNC solutions for all custom fabrication needs.</p>
+    </div>
+    <div class="service-card">
+      <div class="tick">✅</div>
+      <h3>Custom Jigs & Fixtures</h3>
+      <p>Tailored jigs and fixtures for reliable and repeatable production.</p>
+    </div>
+    <div class="service-card">
+      <div class="tick">✅</div>
+      <h3>PCB Assembly</h3>
+      <p>Expert PCB assembly services meeting international quality standards.</p>
+    </div>
+    <div class="service-card">
+      <div class="tick">✅</div>
+      <h3>Precision Engineering</h3>
+      <p>Mechanical excellence for critical applications in electronics.</p>
+    </div>
+    <div class="service-card">
+      <div class="tick">✅</div>
+      <h3>Quality Inspection</h3>
+      <p>Comprehensive testing and inspection for defect-free delivery.</p>
+    </div>
+    <div class="service-card">
+      <div class="tick">✅</div>
+      <h3>CAD Design</h3>
+      <p>3D modeling and design that transforms your concept into reality.</p>
+    </div>
+    <div class="service-card">
+      <div class="tick">✅</div>
+      <h3>Manual Assembly</h3>
+      <p>Experienced hands for intricate and detailed product assembly.</p>
+    </div>
+  </div>
+       </section>
     </main>
 
     <footer>
