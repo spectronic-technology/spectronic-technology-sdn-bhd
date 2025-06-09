@@ -5,22 +5,31 @@ A professional website showcasing services and company presence in Malaysia and 
 ## Our Logo
 
 <p align="center">
-  <img src="images/spectronic.jpg" alt="Spectronic Logo" width="200"/>
+  <img src="images/company/spectronic.jpg" alt="Spectronic Logo" width="200"/>
 </p>
 
 ## Our Services
 
-![CAD/CAM Services](images/cad.jpg) ![CNC Operations](images/cnc.jpg) ![Customer Service](images/customer.png) ![Quality Inspection](images/inspection.jpg)  
-![Jig & Fixture](images/jig.jpg) ![PCB Assembly](images/pcb.jpg) ![Precision Engineering](images/precision.jpg) ![SMT Services](images/smt.jpg)  
-![Spectronic Services](images/spectronic.jpg)
+![CAD/CAM Services](images/services/cad.jpg)
+![CNC Operations](images/services/cnc.jpg)
+![Quality Inspection](images/services/inspection.jpg)
+![Jig & Fixture](images/services/jig.jpg)
+![Manual Soldering](images/services/manual.jpg)
+![PCB Assembly](images/services/pcb.jpg)
+![Precision Engineering](images/services/precision.jpg)
+![SMT Services](images/services/smt.jpg)
+
 
 ## Our Locations
 
-![Malaysia Office](images/malaysia.png) ![Singapore Office](images/singapore.png)
+![Singapore Office](images/company/singapore.jpg)
+![Malaysia Office](images/company/malaysia.png)
+
 
 ## Our Trusted Partner
 
-![Trusted Partner](images/customer.png)
+![Trusted Partner](images/company/customer.png)
+
 
 ## Project Structure
 
