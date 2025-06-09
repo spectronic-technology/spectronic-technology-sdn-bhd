@@ -70,6 +70,34 @@
         .nav-links a:hover::after {
             width: 100%;
         }
+        .hamburger {
+        display: block;
+      }
+    }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: white;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
         /* Services Hero Section */
         .services-hero {
@@ -525,9 +553,10 @@
     </style>
 </head>
 <body>
-    <header>
+   <header>
         <nav>
             <div class="company-name">Spectronic Technology Sdn Bhd</div>
+             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
