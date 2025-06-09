@@ -61,10 +61,4 @@ A professional website showcasing services and company presence in Malaysia and 
 - PHPMailer  
 - Composer (PHP package manager)
 
-## Setup
 
-1. Clone the repository  
-2. Install dependencies:
-
-```bash
-composer install
